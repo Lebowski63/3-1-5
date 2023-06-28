@@ -11,7 +11,7 @@ import ru.kata.spring.boot_security.demo.service.UserService;
 import java.security.Principal;
 
 
-@Controller
+@RestController
 @RequestMapping("/admin")
 public class AdminController {
 
