@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.kata.spring.boot_security.demo.model.Role;
 import ru.kata.spring.boot_security.demo.repositories.RoleRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,7 +19,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public List<Role> listRoles() {
         return roleRepository.findAll();
     }
@@ -26,5 +27,11 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void saveRole(Role role) {
         roleRepository.save(role);
+    }
+
+
+    @Override
+    public List<Role> findAll() {
+        return new ArrayList<>(roleRepository.findAll());
     }
 }
