@@ -19,12 +19,12 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    @Transactional
     public List<Role> listRoles() {
         return roleRepository.findAll();
     }
 
     @Override
+    @Transactional
     public void saveRole(Role role) {
         roleRepository.save(role);
     }

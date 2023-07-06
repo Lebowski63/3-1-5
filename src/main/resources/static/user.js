@@ -1,6 +1,6 @@
 let currentUser = "";
 
-fetch("/api/users/current").then(res => res.json())
+fetch("/api/user/current").then(res => res.json())
     .then(data => {
         currentUser = data;
         console.log(data)
